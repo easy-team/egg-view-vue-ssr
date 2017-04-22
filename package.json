@@ -57,9 +57,9 @@
     "url": "git+https://github.com/hubcarl/egg-view-vue-ssr.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/hubcarl/egg-view-vue-ssr/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-view-vue-ssr#readme",
+  "homepage": "https://github.com/hubcarl/egg-view-vue-ssr#readme",
   "author": "hubcarl",
   "license": "MIT"
 }

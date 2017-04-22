@@ -25,7 +25,7 @@ vue server side render solution for egg-view-vue
 ## Install
 
 ```bash
-$ tnpm i egg-view-vue-ssr --save
+$ npm i egg-view-vue-ssr --save
 ```
 
 ## Usage
