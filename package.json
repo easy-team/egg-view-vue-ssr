@@ -1,0 +1,65 @@
+{
+  "name": "egg-view-vue-ssr",
+  "version": "0.0.1",
+  "description": "vue server side render solution for egg-view-vue",
+  "eggPlugin": {
+    "name": "vuessr",
+    "dependencies": [
+      "vue"
+    ]
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-view",
+    "vue",
+    "ssr"
+  ],
+  "dependencies": {
+    "serialize-javascript": "^1.3.0"
+  },
+  "devDependencies": {
+    "@hubcarl/egg-view-vue": "^0.0.1",
+    "autod": "^2.7.1",
+    "egg": "^1.0.0",
+    "egg-bin": "^3.1.0",
+    "egg-ci": "^1.5.0",
+    "egg-mock": "^3.2.0",
+    "eslint": "^3.18.0",
+    "eslint-config-egg": "^3.2.0",
+    "supertest": "^3.0.0",
+    "webstorm-disable-index": "^1.1.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "files": [
+    "index.js",
+    "app.js",
+    "agent.js",
+    "config",
+    "app",
+    "lib"
+  ],
+  "ci": {
+    "version": "6, 7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubcarl/egg-view-vue-ssr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eggjs/egg/issues"
+  },
+  "homepage": "https://github.com/eggjs/egg-view-vue-ssr#readme",
+  "author": "hubcarl",
+  "license": "MIT"
+}
