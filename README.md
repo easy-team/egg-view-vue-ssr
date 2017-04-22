@@ -53,7 +53,7 @@ see [config/config.default.js](config/config.default.js) for more detail.
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/hubcarl/egg/issues).
+Please open an issue [here](https://github.com/hubcarl/egg-view-vue-ssr/issues).
 
 ## License
 
