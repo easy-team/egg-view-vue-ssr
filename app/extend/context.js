@@ -11,6 +11,7 @@ module.exports = {
    */
   * render(name, locals, options = {}) {
     locals = Object.assign({}, this.app.locals, this.locals, locals);
+    const config = this.app.config.vuessr;
     const root = this.app.config.view.root[0];
     const filepath = path.join(root, name);
     const code = yield this.app.vue.readFile(filepath);
@@ -20,6 +21,6 @@ module.exports = {
       this.app.logger.error('[%s] server render bundle error, try client render, the server render error', name, err);
       return this.renderString(template, context.state);
     });
-    this.body = this.app.vue.resource.inject(name, html, context.state, options);
+    this.body = this.app.vue.resource.inject(name, html, context, config);
   },
 };
