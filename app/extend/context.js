@@ -15,10 +15,11 @@ module.exports = {
     const filepath = path.join(root, name);
     const code = yield this.app.vue.readFile(filepath);
     const template = options.renderOptions && options.renderOptions.template || this.app.vue.resource.template;
-    const html = yield this.app.vue.renderCode(code, locals, options).catch(err => {
+    const context = { state: locals };
+    const html = yield this.app.vue.renderCode(code, context, options).catch(err => {
       this.app.logger.error('[%s] server render bundle error, try client render, the server render error', name, err);
-      return this.renderString(template, locals);
+      return this.renderString(template, context.state);
     });
-    this.body = this.app.vue.resource.inject(name, html, locals, options);
+    this.body = this.app.vue.resource.inject(name, html, context.state, options);
   },
 };
