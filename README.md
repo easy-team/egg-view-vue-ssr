@@ -46,6 +46,11 @@ exports.vuessr = {
  // layout: path.join(app.baseDir, 'app/view/layout.html'),
  // manifest: path.join(app.baseDir, 'config/manifest.json'),
  // buildConfig: path.join(app.baseDir, 'config/buildConfig.json'),
+ // injectCss: true,
+ // injectJs: true,
+ // afterRender: (html, context) => {
+ //      return html;
+ // },
 };
 ```
 
