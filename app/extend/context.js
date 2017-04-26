@@ -18,8 +18,11 @@ module.exports = {
     const template = options.renderOptions && options.renderOptions.template || this.app.vue.resource.template;
     const context = { state: locals };
     const html = yield this.app.vue.renderCode(code, context, options).catch(err => {
-      this.app.logger.error('[%s] server render bundle error, try client render, the server render error', name, err);
-      return this.renderString(template, context.state);
+      if (config.fallbackToClient) {
+        this.app.logger.error('[%s] server render bundle error, try client render, the server render error', name, err);
+        return this.renderString(template, context.state);
+      }
+      throw err;
     });
     this.body = this.app.vue.resource.inject(name, html, context, config);
   },

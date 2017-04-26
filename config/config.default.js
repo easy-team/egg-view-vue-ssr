@@ -22,6 +22,7 @@ module.exports = app => {
     buildConfig: path.join(app.baseDir, 'config/buildConfig.json'),
     injectCss: true,
     injectJs: true,
+    fallbackToClient: true, // fallback to client rendering if server render failed
     afterRender: (html, context) => { /* eslint no-unused-vars:off */
       return html;
     },
