@@ -48,6 +48,7 @@ exports.vuessr = {
  // buildConfig: path.join(app.baseDir, 'config/buildConfig.json'),
  // injectCss: true,
  // injectJs: true,
+ // fallbackToClient: true, // fallback to client rendering after server rendering failed
  // afterRender: (html, context) => {
  //      return html;
  // },
@@ -63,3 +64,5 @@ Please open an issue [here](https://github.com/hubcarl/egg-view-vue-ssr/issues).
 ## License
 
 [MIT](LICENSE)
+
+

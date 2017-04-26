@@ -62,6 +62,14 @@ describe('test/view-vue-ssr.test.js', () => {
           assert(res.text.indexOf('/public/static/js/error/error.js"') > -1);
         });
     });
+
+    it('should GET /render server error, don\'t fallback', () => {
+      mm(app.config.vuessr, 'fallbackToClient', false);
+
+      return request(app.callback())
+        .get('/renderServerError')
+        .expect(500);
+    });
   });
 
 });
