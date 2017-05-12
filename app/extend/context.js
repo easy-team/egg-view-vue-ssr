@@ -24,6 +24,6 @@ module.exports = {
       }
       throw err;
     });
-    this.body = this.app.vue.resource.inject(name, html, context, config);
+    this.body = this.app.vue.resource.inject(name, html, context, config, options);
   },
 };
