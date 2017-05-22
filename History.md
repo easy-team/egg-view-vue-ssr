@@ -1,4 +1,11 @@
 
+1.0.0 / 2017-05-22
+==================
+
+  * refactor:remove resouce prefix
+  * docs:publish
+  * feat:support css inline
+
 0.1.0 / 2017-05-12
 ==================
 
