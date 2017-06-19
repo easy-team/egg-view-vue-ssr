@@ -27,7 +27,7 @@ describe('test/view-vue-ssr.test.js', () => {
     it('should GET /renderString', () => {
       return request(app.callback())
         .get('/renderString')
-        .expect('<div server-rendered="true">name:egg-vue-view,desc:egg view plugin for vue</div>')
+        .expect('<div data-server-rendered="true">name:egg-vue-view,desc:egg view plugin for vue</div>')
         .expect(200);
     });
 
@@ -36,11 +36,7 @@ describe('test/view-vue-ssr.test.js', () => {
         .get('/render')
         .expect(200)
         .expect(res => {
-          assert(res.text.match(new RegExp('<title>app_locals_render_ssr</title>', 'g')));
-          assert(res.text.match(new RegExp('<meta name="description" content="app_context_locals_render_ssr">', 'g')));
-          assert(res.text.match(new RegExp('"title":"app_locals_render_ssr"', 'g')));
-          assert(res.text.match(new RegExp('"description":"app_context_locals_render_ssr"', 'g')));
-          assert(res.text.indexOf('server-rendered="true"') > -1);
+          assert(res.text.indexOf('data-server-rendered="true"') > -1);
           assert(res.text.indexOf('</body></html>') > -1);
           assert(res.text.indexOf('vue server side render!') > -1);
           assert(res.text.indexOf('/public/static/css/test/test.css') > -1);
