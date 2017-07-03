@@ -1,4 +1,11 @@
 
+2.0.0 / 2017-07-03
+==================
+
+  * fix:render file path error for egg-view-vue
+  * refactor: use eggjs plugin: egg-view-vue
+  * refactor:eggjs-egg-view-vue
+
 1.0.0 / 2017-05-22
 ==================
 
