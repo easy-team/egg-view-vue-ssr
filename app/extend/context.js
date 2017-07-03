@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 module.exports = {
 
   /**
@@ -13,7 +14,8 @@ module.exports = {
     const config = this.app.config.vuessr;
     const template = options.renderOptions && options.renderOptions.template || this.app.vue.resource.template;
     const context = { state: locals };
-    const html = yield this.app.vue.renderBundle(name, context, options).catch(err => {
+    const filepath = path.join(this.app.config.view.root[0], name);
+    const html = yield this.app.vue.renderBundle(filepath, context, options).catch(err => {
       if (config.fallbackToClient) {
         this.app.logger.error('[%s] server render bundle error, try client render, the server render error', name, err);
         return this.renderString(template, context.state);
