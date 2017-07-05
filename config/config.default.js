@@ -12,6 +12,10 @@ module.exports = app => {
    * @property {String} [manifest=${baseDir}/config/buildConfig.json] - compile config, include `publicPath` and `commonsChunk`
    * @property {Boolean} [injectCss] whether inject href css
    * @property {Boolean} [injectJs] whether inject src script
+   * @property {Array} [injectRes] inline/inject css or js to file head or body. include location and src config
+   *           inline {Boolean} true or false, default false
+   *           location {String} headBefore, headAfter, bodyBefore, bodyAfter  insert location, default headBefore
+   *           url {String} inline file absolution path
    * @property {Function} afterRender hook html after render
    * `publicPath`: static resource prefix path, so cdn domain address prefix or local prefix path(`/`)
    * `commonsChunk`: common js or css filename, so `vendor`
@@ -22,6 +26,7 @@ module.exports = app => {
     buildConfig: path.join(app.baseDir, 'config/buildConfig.json'),
     injectCss: true,
     injectJs: true,
+    injectRes: [],
     fallbackToClient: true, // fallback to client rendering if server render failed
     afterRender: (html, context) => { /* eslint no-unused-vars:off */
       return html;

@@ -48,6 +48,7 @@ exports.vuessr = {
  // buildConfig: path.join(app.baseDir, 'config/buildConfig.json'),
  // injectCss: true,
  // injectJs: true,
+ // injectRes: []
  // fallbackToClient: true, // fallback to client rendering after server rendering failed
  // afterRender: (html, context) => {
  //      return html;
