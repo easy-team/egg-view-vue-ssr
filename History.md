@@ -1,4 +1,10 @@
 
+2.0.4 / 2017-07-12
+==================
+
+  * fix:local file and manifest inline
+  * fix:file inline path error
+
 2.0.2 / 2017-07-11
 ==================
 
