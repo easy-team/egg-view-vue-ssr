@@ -1,4 +1,9 @@
 
+2.0.5 / 2017-07-17
+==================
+
+  * feat:and config crossorigin attr,support cdn js error catch
+
 2.0.4 / 2017-07-12
 ==================
 
