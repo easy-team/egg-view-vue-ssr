@@ -15,13 +15,23 @@ module.exports = {
     const template = options.renderOptions && options.renderOptions.template || this.app.vue.resource.template;
     const context = { state: locals };
     const filepath = path.join(this.app.config.view.root[0], name);
-    const html = yield this.app.vue.renderBundle(filepath, context, options).catch(err => {
-      if (config.fallbackToClient) {
-        this.app.logger.error('[%s] server render bundle error, try client render, the server render error', name, err);
-        return this.renderString(template, context.state);
-      }
-      throw err;
-    });
-    this.body = this.app.vue.resource.inject(name, html, context, config, options);
+    let html = '';
+    if (options.renderClient) {
+      html = yield this.renderString(template, context.state);
+    } else {
+      html = yield this.app.vue.renderBundle(filepath, context, options).catch(err => {
+        if (config.fallbackToClient) {
+          this.app.logger.error('[%s] server render bundle error, try client render, the server render error', name, err);
+          return this.renderString(template, context.state);
+        }
+        throw err;
+      });
+    }
+    this.body = this.app.vue.resource.inject(html, context, name, config, options);
+  },
+
+  * renderClient(name, locals, options = {}) {
+    options.renderClient = true;
+    yield this.render(name, locals, options);
   },
 };

@@ -56,6 +56,31 @@ exports.vuessr = {
 };
 ```
 
+## Render
+
+### Server Render, call `render` method
+
+```js
+// controller/home.js
+exports.index = function* (ctx) {
+  yield ctx.render('index/index.js', Model.getPage(1, 10));
+};
+
+```
+
+### Client Render, Call `renderClient`  or  build static html to `egg-static` dir by Webpack.
+
+when client render , the template is `exports.vuessr.layout`
+
+```js
+// controller/home.js
+exports.client = function* (ctx) {
+  yield ctx.renderClient('index/index.js', Model.getPage(1, 10));
+};
+
+```
+
+
 see [config/config.default.js](config/config.default.js) for more detail.
 
 ## Questions & Suggestions
