@@ -22,11 +22,11 @@ exports.renderStringError = function* (ctx) {
 exports.render = function* (ctx) {
   this.app.locals.title = 'app_locals_render_ssr';
   this.locals.description = 'app_context_locals_render_ssr';
-  yield ctx.render('test/test.js', { message: 'vue server side render!' });
+  yield ctx.vueRender('test/test.js', { message: 'vue server side render!' });
 };
 
 exports.renderServerError = function* (ctx) {
-  yield ctx.render('error/error.js', {
+  yield ctx.vueRender('error/error.js', {
     keywords: 'ssr',
     description: 'vue server render error, client render',
   });
