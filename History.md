@@ -1,4 +1,23 @@
 
+2.1.1 / 2017-08-28
+==================
+
+  * fix:node async and await
+  * Release 2.1.0
+  * feat:add renderClient method
+  * Release 2.0.2
+  * feat:inline resource mapping
+  * Release 2.0.1
+  * feat:support injectRes config
+  * Release 2.0.0
+  * fix:render file path error for egg-view-vue
+  * refactor: use eggjs plugin: egg-view-vue
+  * refactor:eggjs-egg-view-vue
+  * fix:test case data
+  * refactor:remove resouce prefix
+  * docs:publish
+  * feat:support css inline
+
 2.1.0 / 2017-07-31
 ==================
 
