@@ -6,7 +6,9 @@ module.exports = app => {
 
   /**
    * vue ssr config
-   * @member Config#vue
+   * @prop {Boolean|Object} [cache=true] use LRU cache or custom cache(implement set and get method)
+   *  - Boolean: default true, use LRU cache
+   *  - Object:  support set LRU or custom cache(implement set and get method)
    * @property {String} [manifest=${baseDir}/app/view/layout.html] - client render template, support renderString compile
    * @property {String} [manifest=${baseDir}/config/manifest.json] - resource dependence(css, js) config
    * @property {String} [manifest=${baseDir}/config/buildConfig.json] - compile config, include `publicPath` and `commonsChunk`
@@ -22,6 +24,7 @@ module.exports = app => {
    * `commonsChunk`: common js or css filename, so `vendor`
    */
   config.vuessr = {
+    cache: true,
     layout: path.join(app.baseDir, 'app/view/layout.html'),
     manifest: path.join(app.baseDir, 'config/manifest.json'),
     buildConfig: path.join(app.baseDir, 'config/buildConfig.json'),
