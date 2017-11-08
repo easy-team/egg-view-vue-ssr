@@ -46,7 +46,7 @@ module.exports = {
 
     let promise = null
     let cacheKey = ''
-    const cache = useCacheIfAllowed()
+    const cache = useCacheIfAllowed(config)
     if (cache) {
       cacheKey = JSON.stringify({
         name, locals, options,
