@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-const LRU = require('lru-cache')
-const path = require('path')
+const LRU = require('lru-cache');
+const path = require('path');
 
-let cache = null
+let cache = null;
 
 let useCacheIfAllowed = cacheConfig => {
-  useCacheIfAllowed = () => cache
+  useCacheIfAllowed = () => cache;
 
   if (!cacheConfig) {
-    return cache
+    return cache;
   }
 
   if (cacheConfig === true) {
@@ -17,15 +17,15 @@ let useCacheIfAllowed = cacheConfig => {
     return (cache = LRU({
       max: 1000,
       maxAge: 20 * 1000,
-    }))
+    }));
   }
 
   if (typeof cacheConfig !== 'object') {
-    return cache
+    return cache;
   }
 
-  return (cache = (cacheConfig.set && cacheConfig.get) ? cacheConfig : LRU(cacheConfig))
-}
+  return (cache = (cacheConfig.set && cacheConfig.get) ? cacheConfig : LRU(cacheConfig));
+};
 
 module.exports = {
 
@@ -44,14 +44,14 @@ module.exports = {
     const context = { state: locals };
     const filepath = path.join(this.app.config.view.root[0], name);
 
-    let promise = null
-    let cacheKey = ''
-    const cache = useCacheIfAllowed(config)
+    let promise = null;
+    let cacheKey = '';
+    const cache = useCacheIfAllowed(config);
     if (cache) {
       cacheKey = JSON.stringify({
         name, locals, options,
-      })
-      promise = cache.get(cacheKey)
+      });
+      promise = cache.get(cacheKey);
     }
 
     if (!promise) {
@@ -66,13 +66,18 @@ module.exports = {
           throw err;
         });
       }
+
+      promise = promise.then(html => {
+        return this.app.vue.resource.inject(html, context, name, config, options);
+      });
+
       if (cache) {
-        cache.set(cacheKey, promise)
+        cache.set(cacheKey, promise);
       }
     }
 
     return promise.then(html => {
-      this.body = this.app.vue.resource.inject(html, context, name, config, options);
+      this.body = html;
     });
   },
 
