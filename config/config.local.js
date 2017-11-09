@@ -1,5 +1,5 @@
-'use strict'
+'use strict';
 
 exports.vuessr = {
   cache: false,
-}
+};
