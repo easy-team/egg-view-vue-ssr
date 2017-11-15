@@ -23,7 +23,11 @@ let useCacheIfAllowed = cacheConfig => {
     return cache;
   }
 
-  return (cache = (cacheConfig.set && cacheConfig.get) ? cacheConfig : new Cache(cacheConfig));
+  if (cacheConfig.set && cacheConfig.get) {
+    return (cache = cacheConfig)
+  }
+
+  return (cache = new Cache({ ...cacheConfig, useClones: false }))
 };
 
 module.exports = {
