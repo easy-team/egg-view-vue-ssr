@@ -1,6 +1,6 @@
 'use strict';
 
-const LRU = require('lru-cache');
+const Cache = require('node-cache');
 const path = require('path');
 
 let cache = null;
@@ -14,9 +14,8 @@ let useCacheIfAllowed = cacheConfig => {
 
   if (cacheConfig === true) {
     // 默认 cache 选项
-    return (cache = LRU({
-      max: 1000,
-      maxAge: 20 * 1000,
+    return (cache = new Cache({
+      stdTTL: 20,
     }));
   }
 
@@ -24,7 +23,7 @@ let useCacheIfAllowed = cacheConfig => {
     return cache;
   }
 
-  return (cache = (cacheConfig.set && cacheConfig.get) ? cacheConfig : LRU(cacheConfig));
+  return (cache = (cacheConfig.set && cacheConfig.get) ? cacheConfig : new Cache(cacheConfig));
 };
 
 module.exports = {
