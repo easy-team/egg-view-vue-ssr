@@ -1,5 +1,5 @@
 
-3.0.1 / 2017-11-16
+3.0.2 / 2017-11-16
 ==================
 
   * deps: add server-side-render-resource dependence
