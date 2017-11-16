@@ -1,18 +1,151 @@
 {
-  "about/about.css": "static/css/about/about.css",
-  "about/about.js": "static/js/about/about.js",
-  "app/app.css": "static/css/app/app.css",
-  "app/app.js": "static/js/app/app.js",
-  "element/element.css": "static/css/element/element.css",
-  "element/element.js": "static/js/element/element.js",
-  "index/index.css": "static/css/index/index.css",
-  "index/index.js": "static/js/index/index.js",
-  "router/router.css": "static/css/router/router.css",
-  "router/router.js": "static/js/router/router.js",
-  "test/test.css": "static/css/test/test.css",
-  "test/test.js": "static/js/test/test.js",
-  "error/error.css": "static/css/error/error.css",
-  "error/error.js": "static/js/error/error.js",
-  "vendor.css": "static/css/vendor.css",
-  "vendor.js": "static/js/vendor.js"
+  "js/chunk/0.js": "js/chunk/0.js",
+  "router/router.js": "js/router/router.js",
+  "element/element.js": "js/element/element.js",
+  "element/front.js": "js/element/front.js",
+  "vendor.js": "js/vendor.js",
+  "app/app.js": "js/app/app.js",
+  "about/about.js": "js/about/about.js",
+  "dynamic/dynamic.js": "js/dynamic/dynamic.js",
+  "css/module/module.js": "js/css/module/module.js",
+  "index/index.js": "js/index/index.js",
+  "home/index.js": "js/home/index.js",
+  "sass/sass.js": "js/sass/sass.js",
+  "less/less.js": "js/less/less.js",
+  "test/test.js": "js/test/test.js",
+  "test/test.css": "css/test/test.css",
+  "error/error.js": "js/error/error.js",
+  "error/error.css": "css/error/error.css",
+  "pack/inline.js": "js/pack/inline.js",
+  "runtime.js": "js/runtime.js",
+  "img/egg-vue-webpack-dev.png": "img/egg-vue-webpack-dev.png",
+  "img/logo.png": "img/logo.png",
+  "font/fontawesome-webfont.ttf": "font/fontawesome-webfont.ttf",
+  "img/loading.gif": "img/loading.gif",
+  "deps": {
+    "js/chunk/0.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/chunk/0.js"
+      ],
+      "css": []
+    },
+    "router/router.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/router/router.js"
+      ],
+      "css": []
+    },
+    "element/element.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/element/element.js"
+      ],
+      "css": []
+    },
+    "element/front.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/element/front.js"
+      ],
+      "css": []
+    },
+    "app/app.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/app/app.js"
+      ],
+      "css": []
+    },
+    "about/about.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/about/about.js"
+      ],
+      "css": []
+    },
+    "dynamic/dynamic.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/dynamic/dynamic.js"
+      ],
+      "css": []
+    },
+    "css/module/module.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/css/module/module.js"
+      ],
+      "css": []
+    },
+    "index/index.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/index/index.js"
+      ],
+      "css": []
+    },
+    "home/index.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/home/index.js"
+      ],
+      "css": []
+    },
+    "sass/sass.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/sass/sass.js"
+      ],
+      "css": []
+    },
+    "less/less.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/less/less.js"
+      ],
+      "css": []
+    },
+    "error/error.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/error/error.js"
+      ],
+      "css": ["/public/css/error/error.css"]
+    },
+    "test/test.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/test/test.js"
+      ],
+      "css": ["/public/css/test/test.css"]
+    },
+    "pack/inline.js": {
+      "js": [
+        "/public/js/runtime.js",
+        "/public/js/vendor.js",
+        "/public/js/pack/inline.js"
+      ],
+      "css": []
+    }
+  },
+  "info": {
+    "publicPath": "/public/",
+    "buildPath": "public"
+  }
 }
