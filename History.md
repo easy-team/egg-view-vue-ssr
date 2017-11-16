@@ -1,4 +1,10 @@
 
+3.0.0: / 2017-11-16
+==================
+
+  * feat: vue server render not dependence egg-view-vue and independent js/css resource plugin
+  * refacor: not dependence egg-view-vue;
+
 2.1.1 / 2017-08-28
 ==================
 

@@ -39,9 +39,9 @@ describe('test/view-vue-ssr.test.js', () => {
           assert(res.text.indexOf('data-server-rendered="true"') > -1);
           assert(res.text.indexOf('</body></html>') > -1);
           assert(res.text.indexOf('vue server side render!') > -1);
-          assert(res.text.indexOf('/public/static/css/test/test.css') > -1);
-          assert(res.text.indexOf('/public/static/js/vendor.js"') > -1);
-          assert(res.text.indexOf('/public/static/js/test/test.js"') > -1);
+          assert(res.text.indexOf('/public/css/test/test.css') > -1);
+          assert(res.text.indexOf('/public/js/vendor.js"') > -1);
+          assert(res.text.indexOf('/public/js/test/test.js"') > -1);
         });
     });
 
@@ -53,9 +53,9 @@ describe('test/view-vue-ssr.test.js', () => {
           assert(res.text.match(new RegExp('<meta name="keywords" content="ssr">', 'g')));
           assert(res.text.match(new RegExp('<meta name="description" content="vue server render error, client render">', 'g')));
           assert(res.text.indexOf('vue server render error, client render') > -1);
-          assert(res.text.indexOf('/public/static/css/error/error.css') > -1);
-          assert(res.text.indexOf('/public/static/js/vendor.js"') > -1);
-          assert(res.text.indexOf('/public/static/js/error/error.js"') > -1);
+          assert(res.text.indexOf('/public/css/error/error.css') > -1);
+          assert(res.text.indexOf('/public/js/vendor.js"') > -1);
+          assert(res.text.indexOf('/public/js/error/error.js"') > -1);
         });
     });
 
