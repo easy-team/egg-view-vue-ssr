@@ -13,10 +13,7 @@
     "ssr"
   ],
   "dependencies": {
-    "lru-cache": "^4.0.1",
-    "vue": "^2.5.3",
-    "vue-server-renderer": "^2.5.3",
-    "vuex-router-sync": "^5.0.0"
+    "lru-cache": "^4.0.1"
   },
   "peerDependencies": {
     "vue": "*",
