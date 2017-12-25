@@ -14,7 +14,7 @@ module.exports = app => {
    * vue ssr config
    * @member Config#vue
    * @property {String} [doctype] - html doctype
-   * @property {String} [manifest=${baseDir}/app/view/layout.html] - client render template, support renderString compile
+   * @property {String} [layout=${baseDir}/app/view/layout.html] - client render template, support renderString compile
    * @property {String} [manifest=${baseDir}/config/manifest.json] - resource dependence(css, js) config
    * @property {Boolean} [injectCss] whether inject href css
    * @property {Boolean} [injectJs] whether inject src script

@@ -20,7 +20,7 @@
 [download-image]: https://img.shields.io/npm/dm/egg-view-vue-ssr.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-view-vue-ssr
 
-vue server side render solution for egg-view-vue
+vue server side render solution for egg
 
 ## Install
 
@@ -45,27 +45,60 @@ exports.vuessr = {
 exports.vuessr = {
  // layout: path.join(app.baseDir, 'app/view/layout.html'),
  // manifest: path.join(app.baseDir, 'config/manifest.json'),
- // buildConfig: path.join(app.baseDir, 'config/buildConfig.json'),
  // injectCss: true,
  // injectJs: true,
  // injectRes: []
  // fallbackToClient: true, // fallback to client rendering after server rendering failed
  // afterRender: (html, context) => {
- //      return html;
+ //   return html;
  // },
 };
 ```
+- **doctype**: html content will auto add `<!doctype html>`, you can set `doctype: ''` 
+- **layout**: client render template, support renderString compile
+- **manifest**: static resource dependence, the content such as:
+
+```json
+{
+  "app/app.js": "/public/js/app/app.js",
+  "vendor.js": "/public/js/vendor.js",
+  "deps": {
+    "app/app.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/app/app.js"
+      ],
+      "css": [
+        "/public/css/vendor.css",
+        "/public/css/app.css"
+      ]
+    }
+  }
+}
+```
+- **injectCss**: whether inject href css, default true
+- **injectJs**: whether inject src script, default true
+- **injectRes**: inline/inject css or js to file head or body. include location and src config
+  inline {Boolean} true or false, default false
+  location {String} headBefore, headAfter, bodyBefore, bodyAfter  insert location, default headBefore
+  url {String} inline file absolution path
+- **crossorigin**: js cross domain support for cdn js error catch, default false
+- **fallbackToClient**: fallback to client rendering if server render failed, default true
+- **cache**: lru-cache options @see https://www.npmjs.com/package/lru-cache
+- **renderOptions**: @see https://ssr.vuejs.org/en/api.html#renderer-options
+- **afterRender**:  afterRender hook html after render
 
 ## Render
 
 ### Server Render, call `render` method
+
+**Note: when server render bundle error, will try client render**
 
 ```js
 // controller/home.js
 exports.index = function* (ctx) {
   yield ctx.render('index/index.js', Model.getPage(1, 10));
 };
-
 ```
 
 ### Client Render, Call `renderClient`  or  build static html to `egg-static` dir by Webpack.
@@ -77,7 +110,6 @@ when client render , the template is `exports.vuessr.layout`
 exports.client = function* (ctx) {
   yield ctx.renderClient('index/index.js', Model.getPage(1, 10));
 };
-
 ```
 
 
