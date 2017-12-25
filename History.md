@@ -1,4 +1,10 @@
 
+3.0.3 / 2017-12-25
+==================
+
+  * fix: remove ctx, request, helper attr from locals use Object.defineProperty
+  * deps:add server-side-render-resource dependence
+
 3.0.2 / 2017-11-16
 ==================
 
