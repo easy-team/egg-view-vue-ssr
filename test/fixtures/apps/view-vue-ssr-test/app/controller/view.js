@@ -31,3 +31,11 @@ exports.renderServerError = function* (ctx) {
     description: 'vue server render error, client render',
   });
 };
+
+exports.renderClient = function* (ctx) {
+  yield ctx.renderClient('test/test.js', { message: 'vue server side render!' });
+};
+
+exports.renderVueClient = function* (ctx) {
+  yield ctx.renderVueClient('test/test.js', { message: 'vue server side render!' });
+};

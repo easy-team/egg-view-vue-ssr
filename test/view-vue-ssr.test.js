@@ -45,6 +45,35 @@ describe('test/view-vue-ssr.test.js', () => {
         });
     });
 
+    it('should GET /renderClient', () => {
+      return request(app.callback())
+        .get('/renderClient')
+        .expect(200)
+        .expect(res => {
+          assert(res.text.indexOf('data-server-rendered="true"') > -1);
+          assert(res.text.indexOf('name="client"') > -1);
+          assert(res.text.indexOf('vue server side render!') > -1);
+          assert(res.text.indexOf('/public/css/test/test.css') > -1);
+          assert(res.text.indexOf('/public/js/vendor.js"') > -1);
+          assert(res.text.indexOf('/public/js/test/test.js"') > -1);
+        });
+    });
+
+
+    it('should GET /renderVueClient', () => {
+      return request(app.callback())
+        .get('/renderVueClient')
+        .expect(200)
+        .expect(res => {
+          assert(res.text.indexOf('data-server-rendered="true"') > -1);
+          assert(res.text.indexOf('name="client"') > -1);
+          assert(res.text.indexOf('vue server side render!') > -1);
+          assert(res.text.indexOf('/public/css/test/test.css') > -1);
+          assert(res.text.indexOf('/public/js/vendor.js"') > -1);
+          assert(res.text.indexOf('/public/js/test/test.js"') > -1);
+        });
+    });
+
     it('should GET /render server error, client render', () => {
       return request(app.callback())
         .get('/renderServerError')
