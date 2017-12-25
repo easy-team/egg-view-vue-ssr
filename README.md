@@ -20,7 +20,10 @@
 [download-image]: https://img.shields.io/npm/dm/egg-view-vue-ssr.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-view-vue-ssr
 
-vue server side render solution for egg
+vue server side render solution for egg.
+
+- support vue server side render and static resource inject html
+- support vue server side render error, auto try client render
 
 ## Install
 
@@ -37,6 +40,28 @@ exports.vuessr = {
   package: 'egg-view-vue-ssr',
 };
 ```
+## Version
+
+#### 1.x.x-2.x.x
+
+egg-view-vue-ssr depends on egg-view-vue plugin
+
+#### 3.x.x
+
+- [egg-view-vue-ssr](#egg-view-vue-ssr)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Version](#version)
+            - [1.x.x-2.x.x](#1xx-2xx)
+            - [3.x.x](#3xx)
+    - [Configuration](#configuration)
+    - [Render](#render)
+        - [Server Render, call `render` method](#server-render-call-render-method)
+        - [Client Render, Call `renderClient`  or  build static html to `egg-static` dir by Webpack.](#client-render-call-renderclient-or-build-static-html-to-egg-static-dir-by-webpack)
+    - [Questions & Suggestions](#questions-suggestions)
+    - [License](#license)
+
+- vue and vue-server-renderer are not inside in plugin dependence
 
 ## Configuration
 
