@@ -48,18 +48,7 @@ egg-view-vue-ssr depends on egg-view-vue plugin
 
 #### 3.x.x
 
-- [egg-view-vue-ssr](#egg-view-vue-ssr)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Version](#version)
-            - [1.x.x-2.x.x](#1xx-2xx)
-            - [3.x.x](#3xx)
-    - [Configuration](#configuration)
-    - [Render](#render)
-        - [Server Render, call `render` method](#server-render-call-render-method)
-        - [Client Render, Call `renderClient`  or  build static html to `egg-static` dir by Webpack.](#client-render-call-renderclient-or-build-static-html-to-egg-static-dir-by-webpack)
-    - [Questions & Suggestions](#questions-suggestions)
-    - [License](#license)
+- 3.x.x(egg-view-vue-ssr) no longer depends on egg-view-vue plugin, egg-view-vue-ssr has an independent function that can run on its own
 
 - vue and vue-server-renderer are not inside in plugin dependence
 
