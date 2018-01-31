@@ -1,4 +1,16 @@
 
+3.0.5 / 2018-01-31
+==================
+
+  * refactor: local env auto set injectCss: false
+  * Release 3.0.4
+  * fix:locals is undefined error
+  * doc: style
+  * doc: add version doc
+  * test:support node6 test
+  * test: add client render test
+  * doc: add config doc
+
 3.0.4 / 2018-01-06
 ==================
 
