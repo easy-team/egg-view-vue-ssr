@@ -95,6 +95,17 @@ describe('test/view-vue-ssr.test.js', () => {
         .get('/renderServerError')
         .expect(500);
     });
+
+    it('should not throw error without manifest.json', () => {
+      const app = mm.app({
+        baseDir: 'apps/view-vue-ssr-test2',
+      });
+
+      return app.ready()
+        .then(() => request(app.callback())
+        .get('/renderClient')
+        .expect(200));
+    });
   });
 
 });
