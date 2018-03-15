@@ -1,3 +1,12 @@
+<a name="3.0.8"></a>
+## [3.0.8](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.0.7...3.0.8) (2018-03-15)
+
+
+### Bug Fixes
+
+* csrf not set for egg-security ([7f68210](https://github.com/hubcarl/egg-view-vue-ssr/commit/7f68210))
+
+
 
 3.0.7 / 2018-03-08
 ==================
