@@ -36,6 +36,7 @@ describe('test/view-vue-ssr.test.js', () => {
         .get('/render')
         .expect(200)
         .expect(res => {
+          assert(res.text.indexOf('"csrf"') > -1);
           assert(res.text.indexOf('data-server-rendered="true"') > -1);
           assert(res.text.indexOf('</body></html>') > -1);
           assert(res.text.indexOf('vue server side render!') > -1);
@@ -50,6 +51,7 @@ describe('test/view-vue-ssr.test.js', () => {
         .get('/renderClient')
         .expect(200)
         .expect(res => {
+          assert(res.text.indexOf('"csrf"') > -1);
           assert(res.text.indexOf('data-server-rendered="true"') > -1);
           assert(res.text.indexOf('name="client"') > -1);
           assert(res.text.indexOf('vue server side render!') > -1);
@@ -65,6 +67,7 @@ describe('test/view-vue-ssr.test.js', () => {
         .get('/renderVueClient')
         .expect(200)
         .expect(res => {
+          assert(res.text.indexOf('"csrf"') > -1);
           assert(res.text.indexOf('data-server-rendered="true"') > -1);
           assert(res.text.indexOf('name="client"') > -1);
           assert(res.text.indexOf('vue server side render!') > -1);
