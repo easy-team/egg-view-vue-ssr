@@ -5,6 +5,7 @@ module.exports = app => {
     this.body = 'hi, vue ssr';
   });
   app.get('/render', app.controller.view.render);
+  app.get('/renderLocals', app.controller.view.renderLocals);
   app.get('/renderString', app.controller.view.renderString);
   app.get('/renderClient', app.controller.view.renderClient);
   app.get('/renderVueClient', app.controller.view.renderVueClient);

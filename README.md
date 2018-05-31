@@ -68,9 +68,9 @@ exports.vuessr = {
  // },
 };
 ```
-- **doctype**: html content will auto add `<!doctype html>`, you can set `doctype: ''` 
-- **layout**: client render template, support renderString compile
-- **manifest**: static resource dependence, the content such as:
+- **doctype**: {String} html content will auto add `<!doctype html>`, you can set `doctype: ''` 
+- **layout**: {String} client render template, support renderString compile
+- **manifest**: {Object} static resource dependence, the content such as:
 
 ```json
 {
@@ -90,14 +90,15 @@ exports.vuessr = {
   }
 }
 ```
-- **injectCss**: whether inject href css, default true
-- **injectJs**: whether inject src script, default true
-- **injectRes**: inline/inject css or js to file head or body. include location and src config
+- **injectCss**: {Boolean} whether inject href css, default true
+- **injectJs**: {Boolean} whether inject src script, default true
+- **injectRes**: {Boolean} inline/inject css or js to file head or body. include location and src config
   inline {Boolean} true or false, default false
   location {String} headBefore, headAfter, bodyBefore, bodyAfter  insert location, default headBefore
   url {String} inline file absolution path
-- **crossorigin**: js cross domain support for cdn js error catch, default false
-- **fallbackToClient**: fallback to client rendering if server render failed, default true
+- **mergeLocals** {Boolean} whether merge ctx locals to data, default true
+- **crossorigin**: {Boolean} js cross domain support for cdn js error catch, default false
+- **fallbackToClient**: {Boolean} fallback to client rendering if server render failed, default true
 - **cache**: lru-cache options @see https://www.npmjs.com/package/lru-cache
 - **renderOptions**: @see https://ssr.vuejs.org/en/api.html#renderer-options
 - **afterRender**:  afterRender hook html after render
