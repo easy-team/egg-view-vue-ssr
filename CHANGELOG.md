@@ -1,3 +1,13 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.0.8...3.1.0) (2018-05-31)
+
+
+### Features
+
+* support config.mergeLocals config and set runInNewContext default once ([ae5ad18](https://github.com/hubcarl/egg-view-vue-ssr/commit/ae5ad18))
+
+
+
 <a name="3.0.8"></a>
 ## [3.0.8](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.0.7...3.0.8) (2018-03-15)
 
