@@ -1,3 +1,13 @@
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.0...3.1.1) (2018-07-20)
+
+
+### Bug Fixes
+
+* render client locals merge ([406316a](https://github.com/hubcarl/egg-view-vue-ssr/commit/406316a))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.0.8...3.1.0) (2018-05-31)
 
