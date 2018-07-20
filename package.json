@@ -1,6 +1,6 @@
 {
   "name": "egg-view-vue-ssr",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "vue server side render solution for egg",
   "eggPlugin": {
     "name": "vuessr"
