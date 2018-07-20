@@ -1,3 +1,13 @@
+<a name="3.1.2"></a>
+## [3.1.2](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.1...3.1.2) (2018-07-20)
+
+
+### Bug Fixes
+
+* merge locals JSON.stringify enumerable when mergeLocals=true ([d9fa7f8](https://github.com/hubcarl/egg-view-vue-ssr/commit/d9fa7f8))
+
+
+
 <a name="3.1.1"></a>
 ## [3.1.1](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.0...3.1.1) (2018-07-20)
 
