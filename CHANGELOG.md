@@ -1,3 +1,13 @@
+<a name="3.1.3"></a>
+## [3.1.3](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.2...3.1.3) (2018-09-06)
+
+
+### Bug Fixes
+
+* renderClient set options.layout ([fd0b4cf](https://github.com/hubcarl/egg-view-vue-ssr/commit/fd0b4cf))
+
+
+
 <a name="3.1.2"></a>
 ## [3.1.2](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.1...3.1.2) (2018-07-20)
 
