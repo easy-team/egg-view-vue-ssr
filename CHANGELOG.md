@@ -1,3 +1,14 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.3...3.2.0) (2018-12-13)
+
+
+### Features
+
+* support asset ([816dc8f](https://github.com/hubcarl/egg-view-vue-ssr/commit/816dc8f))
+* support asset render ([857fb54](https://github.com/hubcarl/egg-view-vue-ssr/commit/857fb54))
+
+
+
 <a name="3.1.3"></a>
 ## [3.1.3](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.2...3.1.3) (2018-09-06)
 

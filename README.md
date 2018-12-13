@@ -152,7 +152,8 @@ exports.asset = function* (ctx) {
 };
 ```
 
-see [config/config.default.js](config/config.default.js) for more detail.
+- see [config/config.default.js](config/config.default.js) for more detail.
+- see [egg-vue-asset-boilerplate](https://github.com/easy-team/egg-vue-webpack-boilerplate/tree/feature/green/spa) examples 
 
 ## Questions & Suggestions
 
