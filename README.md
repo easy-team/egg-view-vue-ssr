@@ -24,12 +24,17 @@ vue server side render solution for egg.
 
 - support vue server side render and static resource inject html
 - support vue server side render error, auto try client render
+- support asset render layout by nunjucks or ejs enigne 
 
 ## Install
 
 ```bash
 $ npm i egg-view-vue-ssr --save
 ```
+
+## Document
+
+https://www.yuque.com/easy-team/egg-vue
 
 ## Usage
 
@@ -40,17 +45,6 @@ exports.vuessr = {
   package: 'egg-view-vue-ssr',
 };
 ```
-## Version
-
-#### 1.x.x-2.x.x
-
-egg-view-vue-ssr depends on egg-view-vue plugin
-
-#### 3.x.x
-
-- 3.x.x(egg-view-vue-ssr) no longer depends on egg-view-vue plugin, egg-view-vue-ssr has an independent function that can run on its own
-
-- vue and vue-server-renderer are not inside in plugin dependence
 
 ## Configuration
 
@@ -105,28 +99,57 @@ exports.vuessr = {
 
 ## Render
 
-### Server Render, call `render` method
+### Server Render, Call `render`
 
-**Note: when server render bundle error, will try client render**
+> when server render bundle error, will try client render**
+
+> https://www.yuque.com/easy-team/egg-vue/node
 
 ```js
 // controller/home.js
 exports.index = function* (ctx) {
-  yield ctx.render('index/index.js', Model.getPage(1, 10));
+  yield ctx.render('index/index.js', { message: 'egg vue server side render'});
 };
 ```
 
-### Client Render, Call `renderClient`  or  build static html to `egg-static` dir by Webpack.
+### Client Render, Call `renderClient`, Use Vue render layout
 
-when client render , the template is `exports.vuessr.layout`
+> https://www.yuque.com/easy-team/egg-vue/web
+
+> when client render, render layout `exports.vuessr.layout` by Vue
 
 ```js
 // controller/home.js
 exports.client = function* (ctx) {
-  yield ctx.renderClient('index/index.js', Model.getPage(1, 10));
+  yield ctx.renderClient('index/index.js',{ message: 'egg vue client render'});
 };
 ```
 
+### Asset Render, Call `renderAsset`, Use render layout by viewEngine, default `nunjucks`
+
+> https://www.yuque.com/easy-team/egg-vue/asset
+
+- when asset render, you can render layout `exports.vuessr.layout` by viewEngine, default use `egg-view-nunjucks`
+- you must install the specified engine dependence, such as `egg-view-nunjucks` or `egg-view-ejs`
+- The context provides an `asset` object that can get `js`, `css`, `state` information. [layout template](https://www.yuque.com/easy-team/egg-vue/asset)
+
+#### use default viewEngine nunjucks
+
+```js
+// controller/home.js
+exports.asset = function* (ctx) {
+  yield ctx.renderAsset('index/index.js', { message: 'egg vue asset render'});
+};
+```
+
+#### current render viewEngine config
+
+```js
+// controller/home.js
+exports.asset = function* (ctx) {
+  yield ctx.renderAsset('index/index.js', { message: 'egg vue asset render'}, { viewEngine: 'ejs' });
+};
+```
 
 see [config/config.default.js](config/config.default.js) for more detail.
 

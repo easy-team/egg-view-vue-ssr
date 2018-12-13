@@ -24,6 +24,7 @@ module.exports = app => {
    *           url {String} inline file absolution path
    * @property {Boolean} [mergeLocals] whether merge ctx locals, default true
    * @property {Boolean|String} [crossorigin] js cross domain support for cdn js error catch, default false
+   * @property {String} [viewEngine] egg-view render engine, only valid when renderAsset rendering，default nunjucks
    * @property {Object} [cache] lru-cache options @see https://www.npmjs.com/package/lru-cache
    * @property {Object} [renderOptions] @see https://ssr.vuejs.org/en/api.html#renderer-options
    * renderOptions.template will override layout template
@@ -43,6 +44,7 @@ module.exports = app => {
     crossorigin: false,
     mergeLocals: true,
     fallbackToClient: true, // fallback to client rendering if server render failed,
+    viewEngine: 'nunjucks', // only valid when renderAsset rendering
     cache: {
       max: 1000,
       maxAge: 1000 * 3600 * 24 * 7,

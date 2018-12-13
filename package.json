@@ -1,6 +1,6 @@
 {
   "name": "egg-view-vue-ssr",
-  "version": "3.1.3",
+  "version": "3.2.0",
   "description": "vue server side render solution for egg",
   "eggPlugin": {
     "name": "vuessr"
@@ -28,6 +28,7 @@
     "egg-bin": "^3.7.0",
     "egg-ci": "^1.5.0",
     "egg-mock": "^3.2.0",
+    "egg-view-nunjucks": "^2.2.0",
     "eslint": "^3.18.0",
     "eslint-config-egg": "^3.2.0",
     "supertest": "^3.0.0",

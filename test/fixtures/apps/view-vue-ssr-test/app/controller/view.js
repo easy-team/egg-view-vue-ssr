@@ -1,5 +1,5 @@
 'use strict';
-
+const path = require('path');
 exports.renderString = function* (ctx) {
   ctx.body = yield ctx.renderString('<div>name:{{name}},desc:{{desc}}</div>', {
     name: 'egg-vue-view',
@@ -43,5 +43,13 @@ exports.renderClient = function* (ctx) {
 };
 
 exports.renderVueClient = function* (ctx) {
-  yield ctx.renderVueClient('test/test.js', { message: 'vue server side render!' });
+  this.body = yield ctx.renderVueClient('test/test.js', { message: 'vue server side render!' });
+};
+
+exports.renderAsset = function* (ctx) {
+  yield ctx.renderAsset('app/app.js', { title: 'renderAsset', message: 'vue server side render!' }, { layout: path.join(ctx.app.baseDir, 'app/view/layout_asset.html')});
+};
+
+exports.renderVueAsset = function* (ctx) {
+  this.body = yield ctx.renderVueAsset('app/app.js', { title: 'renderAsset', message: 'vue server side render!' }, { layout: path.join(ctx.app.baseDir, 'app/view/layout_asset.html')});
 };

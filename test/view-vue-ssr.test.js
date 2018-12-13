@@ -62,6 +62,29 @@ describe('test/view-vue-ssr.test.js', () => {
         });
     });
 
+    it('should GET /renderAsset', () => {
+      return request(app.callback())
+        .get('/renderAsset')
+        .expect(200)
+        .expect(res => {
+          assert(res.text.indexOf('<title>renderAsset</title>') > -1);
+          assert(res.text.indexOf('/public/js/runtime.js') > -1);
+          assert(res.text.indexOf('/public/js/vendor.js"') > -1);
+          assert(res.text.indexOf('/public/js/app/app.js"') > -1);
+        });
+    });
+
+    it('should GET /renderVueAsset', () => {
+      return request(app.callback())
+        .get('/renderVueAsset')
+        .expect(200)
+        .expect(res => {
+          assert(res.text.indexOf('<title>renderAsset</title>') > -1);
+          assert(res.text.indexOf('/public/js/runtime.js') > -1);
+          assert(res.text.indexOf('/public/js/vendor.js"') > -1);
+          assert(res.text.indexOf('/public/js/app/app.js"') > -1);
+        });
+    });
 
     it('should GET /renderVueClient', () => {
       return request(app.callback())
