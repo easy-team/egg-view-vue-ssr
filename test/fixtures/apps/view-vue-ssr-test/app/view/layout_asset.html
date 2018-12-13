@@ -13,11 +13,11 @@
 </head>
 <body>
   <div id='app'></div>
-  {% for item in asset.js %}
-    <script type="text/javascript" src="{{item}}"></script>
-  {% endfor %}
   <script type="text/javascript">
     window.__INITIAL_STATE__ = {{ asset.state | safe }};
   </script>
+  {% for item in asset.js %}
+    <script type="text/javascript" src="{{item}}"></script>
+  {% endfor %}
 </body>
 </html>

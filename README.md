@@ -90,6 +90,7 @@ exports.vuessr = {
   inline {Boolean} true or false, default false
   location {String} headBefore, headAfter, bodyBefore, bodyAfter  insert location, default headBefore
   url {String} inline file absolution path
+- **viewEngine** egg-view render engine, only valid when renderAsset rendering，default nunjucks
 - **mergeLocals** {Boolean} whether merge ctx locals to data, default true
 - **crossorigin**: {Boolean} js cross domain support for cdn js error catch, default false
 - **fallbackToClient**: {Boolean} fallback to client rendering if server render failed, default true
@@ -142,7 +143,7 @@ exports.asset = function* (ctx) {
 };
 ```
 
-#### current render viewEngine config
+#### scope render viewEngine config
 
 ```js
 // controller/home.js
@@ -155,7 +156,7 @@ see [config/config.default.js](config/config.default.js) for more detail.
 
 ## Questions & Suggestions
 
-Please open an issue [here](https://github.com/hubcarl/egg-view-vue-ssr/issues).
+Please open an issue [here](https://github.com/easy-team/egg-view-vue-ssr/issues).
 
 ## License
 
