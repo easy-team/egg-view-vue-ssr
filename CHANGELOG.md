@@ -1,3 +1,13 @@
+<a name="3.2.1"></a>
+## [3.2.1](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.2.0...3.2.1) (2018-12-18)
+
+
+### Bug Fixes
+
+* restore renderVueClient body set ([af7ab19](https://github.com/hubcarl/egg-view-vue-ssr/commit/af7ab19))
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.1.3...3.2.0) (2018-12-13)
 
