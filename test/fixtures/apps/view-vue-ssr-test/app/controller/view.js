@@ -43,7 +43,7 @@ exports.renderClient = function* (ctx) {
 };
 
 exports.renderVueClient = function* (ctx) {
-  this.body = yield ctx.renderVueClient('test/test.js', { message: 'vue server side render!' });
+  yield ctx.renderVueClient('test/test.js', { message: 'vue server side render!' });
 };
 
 exports.renderAsset = function* (ctx) {
@@ -51,5 +51,5 @@ exports.renderAsset = function* (ctx) {
 };
 
 exports.renderVueAsset = function* (ctx) {
-  this.body = yield ctx.renderVueAsset('app/app.js', { title: 'renderAsset', message: 'vue server side render!' }, { layout: path.join(ctx.app.baseDir, 'app/view/layout_asset.html')});
+  yield ctx.renderVueAsset('app/app.js', { title: 'renderAsset', message: 'vue server side render!' }, { layout: path.join(ctx.app.baseDir, 'app/view/layout_asset.html')});
 };
