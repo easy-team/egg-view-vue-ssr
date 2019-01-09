@@ -47,6 +47,22 @@ describe('test/view-vue-ssr.test.js', () => {
         });
     });
 
+    it('should GET /renderToHtml', () => {
+      return request(app.callback())
+        .get('/renderToHtml')
+        .expect(200)
+        .expect(res => {
+          assert(res.text.indexOf('"csrf"') > -1);
+          assert(res.text.indexOf('data-server-rendered="true"') > -1);
+          assert(res.text.indexOf('</body></html>') > -1);
+          assert(res.text.indexOf('<title>app_locals_render_ssr</title>') > -1);
+          assert(res.text.indexOf('vue server side render!') > -1);
+          assert(res.text.indexOf('/public/css/test/test.css') > -1);
+          assert(res.text.indexOf('/public/js/vendor.js"') > -1);
+          assert(res.text.indexOf('/public/js/test/test.js"') > -1);
+        });
+    });
+
     it('should GET /renderClient', () => {
       return request(app.callback())
         .get('/renderClient')

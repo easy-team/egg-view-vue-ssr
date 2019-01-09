@@ -25,6 +25,12 @@ exports.render = function* (ctx) {
   yield ctx.render('test/test.js', { message: 'vue server side render!' });
 };
 
+exports.renderToHtml = function* (ctx) {
+  this.app.locals.title = 'app_locals_render_ssr';
+  this.locals.description = 'app_context_locals_render_ssr';
+  this.body = yield ctx.renderToHtml('test/test.js', { message: 'vue server side render!' });
+};
+
 exports.renderLocals = function* (ctx) {
   this.app.locals.title = 'app_locals_render_ssr';
   this.locals.description = 'app_context_locals_render_ssr';

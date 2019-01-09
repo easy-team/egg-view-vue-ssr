@@ -6,7 +6,10 @@ module.exports = {
   renderAsset(name, locals, options) {
     return this.renderVueAsset(name, locals, options);
   },
-  renderVueAsset(name, locals, options) {
+  renderToHtml(name, locals, options = {}) {
+    return this.app.vue.renderView(this, name, locals, options);
+  },
+  renderVueAsset(name, locals, options = {}) {
     return this.app.vue.renderAsset(this, name, locals, options).then(html => {
       this.body = html;
     });
