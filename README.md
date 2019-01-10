@@ -20,11 +20,14 @@
 [download-image]: https://img.shields.io/npm/dm/egg-view-vue-ssr.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-view-vue-ssr
 
-vue server side render solution for egg.
+Vue Server Side Render Plugin for Egg.
 
-- support vue server side render and static resource inject html
-- support vue server side render error, auto try client render
-- support asset render layout by nunjucks or ejs enigne 
+## Feature
+
+- Support Vue [Server Side Render Mode](https://www.yuque.com/easy-team/egg-vue/node) And [Vue Client Render Mode](https://www.yuque.com/easy-team/egg-vue/web)
+- Support [Asset Render](https://www.yuque.com/easy-team/egg-vue/asset) Layout by Nunjucks Or ejs Enigne 
+- Support Vue Server Side Render Error, Auto Try Client Render
+- Support Static Resouce Auto Inject to Html
 
 ## Install
 
@@ -55,9 +58,8 @@ exports.vuessr = {
  // manifest: path.join(app.baseDir, 'config/manifest.json'),
  // injectCss: true,
  // injectJs: true,
- // injectRes: []
  // fallbackToClient: true, // fallback to client rendering after server rendering failed
- // afterRender: (html, context) => {
+ // afterRender: (html, ctx) => {
  //   return html;
  // },
 };
@@ -110,6 +112,21 @@ exports.vuessr = {
 // controller/home.js
 exports.index = function* (ctx) {
   yield ctx.render('index/index.js', { message: 'egg vue server side render'});
+};
+```
+
+### Server Render, Call `renderToHtml`
+
+> when server render bundle error, will try client render**
+
+> https://www.yuque.com/easy-team/egg-vue/node
+
+```js
+// controller/home.js
+exports.index = function* (ctx) {
+  const html = yield ctx.renderToHtml('index/index.js', { message: 'egg vue server side render'});
+  // you can process html
+  ctx.body = html;
 };
 ```
 
