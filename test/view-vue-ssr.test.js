@@ -146,8 +146,8 @@ describe('test/view-vue-ssr.test.js', () => {
 
       return app.ready()
         .then(() => request(app.callback())
-        .get('/renderClient')
-        .expect(200));
+          .get('/renderClient')
+          .expect(200));
     });
   });
 

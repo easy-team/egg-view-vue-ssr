@@ -29,8 +29,8 @@
     "egg-ci": "^1.5.0",
     "egg-mock": "^3.2.0",
     "egg-view-nunjucks": "^2.2.0",
-    "eslint": "^3.18.0",
-    "eslint-config-egg": "^3.2.0",
+    "eslint": "^6.0.0",
+    "eslint-config-egg": "^7.4.1",
     "supertest": "^3.0.0",
     "vue": "^2.5.13",
     "webstorm-disable-index": "^1.1.2"
