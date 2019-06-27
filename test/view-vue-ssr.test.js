@@ -175,4 +175,39 @@ describe('test/view-vue-ssr.test.js', () => {
         });
     });
   });
+
+  describe('vue server render no manifest test', () => {
+    let app;
+    before(() => {
+      app = mm.app({
+        baseDir: 'apps/view-vue-ssr-test2',
+      });
+      return app.ready();
+    });
+
+    after(() => app.close());
+    afterEach(mm.restore);
+
+    it('should GET /render', () => {
+      return request(app.callback())
+        .get('/render')
+        .expect(200)
+        .expect(res => {
+          assert(res.text.indexOf('data-server-rendered="true"') > -1);
+          assert(res.text.indexOf('</body></html>') > -1);
+          assert(res.text.indexOf('<title>app_locals_render_ssr</title>') > -1);
+          assert(res.text.indexOf('vue server side render!') > -1);
+        });
+    });
+
+    it('should GET /renderClient', () => {
+      return request(app.callback())
+        .get('/renderClient')
+        .expect(200)
+        .expect(res => {
+          assert(res.text.indexOf('data-server-rendered="true"') > -1);
+          assert(res.text.indexOf('name="client"') > -1);
+        });
+    });
+  });
 });
