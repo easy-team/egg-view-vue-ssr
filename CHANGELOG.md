@@ -1,3 +1,13 @@
+<a name="3.3.1"></a>
+## [3.3.1](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.3.0...3.3.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* render no manifest error ([2f8fa10](https://github.com/hubcarl/egg-view-vue-ssr/commit/2f8fa10))
+
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.2.1...3.3.0) (2019-01-09)
 
