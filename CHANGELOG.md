@@ -1,3 +1,8 @@
+<a name="3.3.2"></a>
+## [3.3.2](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.3.1...3.3.2) (2020-01-16)
+
+
+
 <a name="3.3.1"></a>
 ## [3.3.1](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.3.0...3.3.1) (2019-06-27)
 
