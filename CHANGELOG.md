@@ -1,3 +1,11 @@
+<a name="3.3.3"></a>
+## [3.3.3](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.3.2...3.3.3) (2020-08-15)
+
+### Bug Fixes
+
+* serialize-javascript from 2.1.2 to 4.0.0 ([c2ac53d](https://github.com/hubcarl/egg-view-vue-ssr/commit/c2ac53d))
+
+
 <a name="3.3.2"></a>
 ## [3.3.2](https://github.com/hubcarl/egg-view-vue-ssr/compare/3.3.1...3.3.2) (2020-01-16)
 
