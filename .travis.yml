@@ -3,11 +3,8 @@ language: node_js
 node_js:
   - '6'
   - '8'
-  - '10'
-  - '12'
-  - '14'
 before_install:
-  - npm i npminstall -g
+  - npm i npminstall@3 -g
 install:
   - npminstall
 script:
