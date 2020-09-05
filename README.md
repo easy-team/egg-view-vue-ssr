@@ -9,12 +9,12 @@
 
 [npm-image]: https://img.shields.io/npm/v/egg-view-vue-ssr.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/egg-view-vue-ssr
-[travis-image]: https://img.shields.io/travis/hubcarl/egg-view-vue-ssr.svg?style=flat-square
-[travis-url]: https://travis-ci.org/hubcarl/egg-view-vue-ssr
-[codecov-image]: https://img.shields.io/codecov/c/github/hubcarl/egg-view-vue-ssr.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/hubcarl/egg-view-vue-ssr?branch=master
-[david-image]: https://img.shields.io/david/hubcarl/egg-view-vue-ssr.svg?style=flat-square
-[david-url]: https://david-dm.org/hubcarl/egg-view-vue-ssr
+[travis-image]: https://img.shields.io/travis/easy-team/egg-view-vue-ssr.svg?style=flat-square
+[travis-url]: https://travis-ci.org/easy-team/egg-view-vue-ssr
+[codecov-image]: https://img.shields.io/codecov/c/github/easy-team/egg-view-vue-ssr.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/easy-team/egg-view-vue-ssr?branch=master
+[david-image]: https://img.shields.io/david/easy-team/egg-view-vue-ssr.svg?style=flat-square
+[david-url]: https://david-dm.org/easy-team/egg-view-vue-ssr
 [snyk-image]: https://snyk.io/test/npm/egg-view-vue-ssr/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/egg-view-vue-ssr
 [download-image]: https://img.shields.io/npm/dm/egg-view-vue-ssr.svg?style=flat-square
